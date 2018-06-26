@@ -20,4 +20,6 @@ public class ProductModel {
 
     private BigDecimal price;
 
+    private Boolean isPublished;
+
 }

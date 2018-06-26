@@ -17,4 +17,6 @@ public class InventoryModel {
 
     private BigDecimal price;
 
+    private Integer stock;
+
 }

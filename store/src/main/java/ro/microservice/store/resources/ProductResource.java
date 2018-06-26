@@ -1,6 +1,5 @@
 package ro.microservice.store.resources;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,4 +25,9 @@ public class ProductResource {
         return productService.getByCategory(categorId);
     }
 
+    @GetMapping("/{code}")
+    public Collection<ProductModel> getByCode(@PathVariable("code") final String code){
+        return productService.getCode(code);
+
+    }
 }

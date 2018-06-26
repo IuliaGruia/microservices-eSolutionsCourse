@@ -3,6 +3,7 @@ package ro.microservice.store.services;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import ro.microservice.store.clients.InventoryClient;
+import ro.microservice.store.entities.Product;
 import ro.microservice.store.mappers.ProductMapper;
 import ro.microservice.store.models.InventoryModel;
 import ro.microservice.store.models.ProductModel;
@@ -30,5 +31,9 @@ public class ProductService {
                     return ProductMapper.toModel(p, inventoryModel);
                })
                .collect(Collectors.toList());
+    }
+
+    public Collection<ProductModel> getCode(String code) {
+        return productRepository.findByCode(code).stream().map(ProductMapper::toModel).collect(Collectors.toList());
     }
 }

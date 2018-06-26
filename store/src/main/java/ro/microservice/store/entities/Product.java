@@ -1,5 +1,6 @@
 package ro.microservice.store.entities;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,4 +26,6 @@ public class Product {
 
     @ManyToOne
     private Category category;
+
+    private Boolean isPublished;
 }

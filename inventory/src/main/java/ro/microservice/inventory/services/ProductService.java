@@ -1,7 +1,5 @@
 package ro.microservice.inventory.services;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import ro.microservice.inventory.config.KafkaGateway;
 import ro.microservice.inventory.entities.Product;

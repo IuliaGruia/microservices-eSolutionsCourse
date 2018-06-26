@@ -6,7 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.stereotype.Component;
+import ro.microservice.store.config.KafkaChannels;
 import ro.microservice.store.entities.Category;
 import ro.microservice.store.entities.Product;
 import ro.microservice.store.repositories.CategoryRepository;
@@ -15,6 +17,7 @@ import ro.microservice.store.repositories.ProductRepository;
 @EnableDiscoveryClient
 @SpringBootApplication
 @EnableFeignClients
+@EnableBinding(KafkaChannels.class)
 public class StoreApplication {
 
 	public static void main(String[] args) {

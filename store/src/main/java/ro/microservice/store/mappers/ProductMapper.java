@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 public class ProductMapper {
 
-    public static ProductModel toModel(final Product product, ResponseEntity<InventoryModel> inventoryModel){
+    public static ProductModel toModel(final Product product){
        return ProductMapper.toModel(product, InventoryModel.builder().price(BigDecimal.ZERO).build());
     }
 
@@ -19,6 +19,7 @@ public class ProductMapper {
                 .name(product.getName())
                 .category(product.getCategory())
                 .price(inventory.getPrice())
+                .isPublished(product.getIsPublished())
                 .build();
     }
 }
